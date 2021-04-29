@@ -483,6 +483,7 @@
 			<!-- Product Tab Content Container -->
 			<div class="pro-tab-content-container tab-content col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1">
 				<!-- Product Tab -->
+				{% for product in newly_arrived %}
 				<div class="pro-tab tab-pane active row" id="new-arrival">
 					<div class="new-arrival-slider tab-pro-slider product-slider">
 						<!-- Single Product -->
@@ -490,7 +491,7 @@
 							<div class="sin-product">
 								<!-- Product Image -->
 								<div class="pro-image">
-									<a href="#"><img src="http://moonhtml.themer.top/img/product/1.jpg" alt="product" /></a>
+									<a href="#"><img src="product.product_img.url" alt="product" /></a>
 									<span class="pro-label great-deal">great deals</span>
 									<!-- Product Hover Content -->
 									<div class="pro-hover fix" style="background-image: url('http://moonhtml.themer.top/img/product/1.jpg');">
@@ -504,15 +505,8 @@
 										<div class="pro-hover-option">
 											<!-- product Size -->
 											<div class="pro-size fix">
-												<h4>Sizes:</h4>
-												<ul>
-													<li>s</li>
-													<li>xs</li>
-													<li>m</li>
-													<li>l</li>
-													<li>xl</li>
-													<li>xxl</li>
-												</ul>
+												<h4>Sizes:{{ product.product_size }}</h4>
+							
 											</div>
 											<!-- product Color -->
 											<div class="pro-color fix">
@@ -531,11 +525,11 @@
 								<!-- Product Content -->
 								<div class="pro-content">
 									<div class="top fix">
-										<h3><a href="#">Stripped Wool</a></h3>
-										<p class="price float-right">$ 46</p>
+										<h3><a href="#">{{ product.product_name }}</a></h3>
+										<p class="price float-right">{{product.product_price}} LE</p>
 									</div>
 									<div class="bottom fix">
-										<a href="#" class="pro-cat float-left">Mens wear</a>
+										<a href="#" class="pro-cat float-left">{{ product.product_category }}</a>
 										<div class="ratting float-right">
 											<i class="mo-star star active"></i>
 											<i class="mo-star star active"></i>
@@ -551,7 +545,9 @@
                         
 					</div>
 				</div>
+				{% endfor %}
 				<!-- Product Tab -->
+				{% for product in best_seller %}
 				<div class="pro-tab tab-pane row" id="best-seller">
 					<div class="best-seller tab-pro-slider product-slider">
 						<!-- Single Product -->
@@ -559,7 +555,7 @@
 							<div class="sin-product">
 								<!-- Product Image -->
 								<div class="pro-image">
-									<a href="#"><img src="http://moonhtml.themer.top/img/product/5.jpg" alt="product" /></a>
+									<a href="#"><img src="product.product_img.url" alt="product" /></a>
 									<span class="pro-label great-deal">great deals</span>
 									<!-- Product Hover Content -->
 									<div class="pro-hover fix" style="background-image: url('http://moonhtml.themer.top/img/product/5.jpg');">
@@ -573,15 +569,8 @@
 										<div class="pro-hover-option">
 											<!-- product Size -->
 											<div class="pro-size fix">
-												<h4>Sizes:</h4>
-												<ul>
-													<li>s</li>
-													<li>xs</li>
-													<li>m</li>
-													<li>l</li>
-													<li>xl</li>
-													<li>xxl</li>
-												</ul>
+												<h4>Sizes: {{ product.product_size }}</h4>
+								
 											</div>
 											<!-- product Color -->
 											<div class="pro-color fix">
@@ -600,11 +589,11 @@
 								<!-- Product Content -->
 								<div class="pro-content">
 									<div class="top fix">
-										<h3><a href="#">Stripped Wool</a></h3>
-										<p class="price float-right">$ 46</p>
+										<h3><a href="#">{{product.product_name}}</a></h3>
+										<p class="price float-right">{{product.product_price}} LE</p>
 									</div>
 									<div class="bottom fix">
-										<a href="#" class="pro-cat float-left">Mens wear</a>
+										<a href="#" class="pro-cat float-left">{{product.product_category}}</a>
 										<div class="ratting float-right">
 											<i class="mo-star star active"></i>
 											<i class="mo-star star active"></i>
@@ -620,7 +609,9 @@
                         
 					</div>
 				</div>
+				{% endfor %}
 				<!-- Product Tab -->
+				{% for product in most_wanted %}
 				<div class="pro-tab tab-pane row" id="most-wanted">
 					<div class="most-wanted-slider tab-pro-slider product-slider">
 						<!-- Single Product -->
@@ -628,7 +619,7 @@
 							<div class="sin-product">
 								<!-- Product Image -->
 								<div class="pro-image">
-									<a href="#"><img src="http://moonhtml.themer.top/img/product/9.jpg" alt="product" /></a>
+									<a href="#"><img src="product.product_img.url" alt="product" /></a>
 									<span class="pro-label great-deal">great deals</span>
 									<!-- Product Hover Content -->
 									<div class="pro-hover fix" style="background-image: url('http://moonhtml.themer.top/img/product/9.jpg');">
@@ -642,15 +633,8 @@
 										<div class="pro-hover-option">
 											<!-- product Size -->
 											<div class="pro-size fix">
-												<h4>Sizes:</h4>
-												<ul>
-													<li>s</li>
-													<li>xs</li>
-													<li>m</li>
-													<li>l</li>
-													<li>xl</li>
-													<li>xxl</li>
-												</ul>
+												<h4>Sizes: {{ product.product_size }}</h4>
+												
 											</div>
 											<!-- product Color -->
 											<div class="pro-color fix">
@@ -669,8 +653,8 @@
 								<!-- Product Content -->
 								<div class="pro-content">
 									<div class="top fix">
-										<h3><a href="#">Backel’s Skin Gel</a></h3>
-										<p class="price float-right">$ 46</p>
+										<h3><a href="#">{{ product.product_name }}</a></h3>
+										<p class="price float-right">{{ product.product_price }} LE</p>
 									</div>
 									<div class="bottom fix">
 										<a href="#" class="pro-cat float-left">Mens Beauty</a>
@@ -689,6 +673,7 @@
                         
 					</div>
 				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
